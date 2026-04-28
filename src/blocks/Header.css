@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 9999px;
+  box-shadow: 20px 20px 20px rgba(244, 244, 244, 0.7);
+}
+
+.add__Icon {
+  height: 50px;
+  width: 50px;
+}
+
+.add__Todo {
+  display: flex;
+  border: none;
+  background-color: transparent;
+  align-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 30px;
+  color: red;
+  cursor: pointer;
+}

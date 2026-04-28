@@ -1,0 +1,8 @@
+.Content {
+  display: flex;
+  margin: 50px 40px;
+  border: 2px solid black;
+  border-radius: 20px;
+  box-shadow: white 20px 20px 80px 10px;
+ 
+}

@@ -1,29 +1,34 @@
-import "../blocks/modal.css";
+import "../blocks/Modal.css";
 import { useState } from "react";
 
-function Modal({ onClose }) {
+function Modal({ onClose, onAddTodo }) {
   const [inputValue, setInputValue] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(inputValue);
+    onAddTodo(inputValue);
     onClose();
   }
 
   return (
     <div className="modal">
       <div className="modal__content">
-        <h2>Add Todo</h2>
-        <form onSubmit={handleSubmit}>
+        <h2 className="modal__title">Add Todo</h2>
+        <form className="modal__form" onSubmit={handleSubmit}>
           <input
+            className="modal__input"
             type="text"
             placeholder="Enter todo..."
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
           />
-          <button type="submit">Add</button>
+          <button className="modal__submit" type="submit">
+            Add
+          </button>
         </form>
-        <button onClick={onClose}>Close</button>
+        <button className="modal__close" onClick={onClose}>
+          Close
+        </button>
       </div>
     </div>
   );

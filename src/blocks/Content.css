@@ -3,6 +3,57 @@
   margin: 50px 40px;
   border: 2px solid black;
   border-radius: 20px;
-  box-shadow: white 20px 20px 80px 10px;
- 
+  box-shadow: rgb(0, 0, 0) 20px 20px 80px 10px;
+}
+
+.Content__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  border: solid rgba(255, 255, 255, 0.824) 2px;
+  border-radius: 10px;
+  margin: 10px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.Content__text {
+  font-size: 10px;
+  color: rgb(249, 249, 249);
+}
+
+.Content__text--done {
+  text-decoration: line-through;
+}
+
+.Content__item input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #dc3545;
+  background-color: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.Content__item input[type="checkbox"]:checked {
+  background-color: #000000;
+}
+
+.Content__delete {
+  padding: 6px 14px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.Content__delete:hover {
+  background-color: #0056b3;
 }

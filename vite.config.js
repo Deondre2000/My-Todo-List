@@ -18,9 +18,9 @@ export default defineConfig({
         theme_color: "#007bff",
         icons: [
           {
-            src: "/favicon.svg",
+            src: "./src/assets/todo list.png",
             sizes: "any",
-            type: "image/svg+xml",
+            type: "image/png",
           },
         ],
       },

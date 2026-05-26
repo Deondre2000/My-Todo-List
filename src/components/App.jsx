@@ -1,21 +1,14 @@
-import "../blocks/app.css";
-import Header from "./header.jsx";
-import Content from "./Content.jsx";
 import "../blocks/App.css";
+import Header from "./Header.jsx";
+import Content from "./Content.jsx";
 import Modal from "./Modal.jsx";
 import { useState, useEffect } from "react";
+import background from "../assets/app-background.webp";
 
 function App() {
   const [todos, setTodos] = useState(() => {
     const saved = localStorage.getItem("todos");
-    return saved
-      ? JSON.parse(saved)
-      : [
-          { text: "do hair", completed: false },
-          { text: "brush teeth", completed: false },
-          { text: "do laundry", completed: false },
-          { text: "take out trash", completed: false },
-        ];
+    return saved ? JSON.parse(saved) : [];
   });
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -66,6 +59,7 @@ function App() {
 
   return (
     <div className="App">
+      <img className="App__background" src={background} alt="Background" />
       <Header onAddClick={openModal} />
       <Content
         todos={todos}

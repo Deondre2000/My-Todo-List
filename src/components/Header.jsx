@@ -5,8 +5,8 @@ function Header({ onAddClick }) {
   return (
     <header className="header">
       <h1 className="Title">To Do List</h1>
-      <button type="button" className="add__Todo" onClick={onAddClick}>
-        <img className="add__Icon" src={addIcon} alt="Add Todo" />
+      <button type="button" className="Headeradd__Todo" onClick={onAddClick}>
+        <img className="Headeradd__Icon" src={addIcon} alt="Add Todo" />
         Add Todo
       </button>
     </header>

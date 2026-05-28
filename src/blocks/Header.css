@@ -7,12 +7,12 @@
   box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.9);
 }
 
-.add__Icon {
+.Headeradd__Icon {
   height: 50px;
   width: 50px;
 }
 
-.add__Todo {
+.Headeradd__Todo {
   display: flex;
   border: none;
   background-color: transparent;
@@ -22,4 +22,22 @@
   font-size: 30px;
   color: red;
   cursor: pointer;
+}
+
+
+@media (max-width: 800px) {
+  .header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .Headeradd__Todo {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .Headeradd__Icon {
+    height: 40px;
+    width: 40px;
+  }
 }

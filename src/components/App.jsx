@@ -4,6 +4,7 @@ import Content from "./Content.jsx";
 import Modal from "./Modal.jsx";
 import { useState, useEffect } from "react";
 import background from "../assets/app-background.webp";
+import Footer from "./Footer.jsx";
 
 function App() {
   const [todos, setTodos] = useState(() => {
@@ -67,6 +68,7 @@ function App() {
         onToggleTodo={toggleTodo}
       />
       {isModalOpen && <Modal onClose={closeModal} onAddTodo={addTodo} />}
+      <Footer />
     </div>
   );
 }

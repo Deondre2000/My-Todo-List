@@ -12,37 +12,46 @@
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 0 95px rgba(255, 255, 255, 0.75),
+    0 2px 48px rgba(0, 0, 0, 0.1);
   width: 500px;
   max-width: 90%;
   height: 500px;
   position: fixed;
-  top: 90px;
+  top: 160px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  overflow: hidden;
 }
 
-@media (max-width: 800px) {
-  .modal__content {
-    top: 120px;
-  }
+.modal__content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+  pointer-events: none;
 }
 
-.modal__title {
-  font-size: 30px;
-}
-
-.modal__input {
+.modal__background {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  padding: 10px;
-  margin-top: 20px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.modal__content > *:not(.modal__background) {
+  position: relative;
+  z-index: 2;
 }
 
 .modal__submit {
@@ -51,9 +60,36 @@
   color: #fff;
   background-color: #007bff;
   border: none;
-  border-radius: 4px;
+  border-radius: 1000px;
   cursor: pointer;
   width: 100%;
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+.modal__submit:hover {
+  transform: scale(1.05);
+  background-color: #000;
+}
+
+.modal__title {
+  font-size: 30px;
+}
+
+.modal__input,
+.modal__date {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.modal__dueDate {
+  color: rgb(255, 255, 255);
+  font-size: 24px;
+  text-align: center;
 }
 
 .modal__close {
@@ -62,9 +98,17 @@
   color: #fff;
   background-color: #dc3545;
   border: none;
-  border-radius: 4px;
+  border-radius: 1000px;
   cursor: pointer;
   width: 100%;
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+.modal__close:hover {
+  transform: scale(1.05);
+  background-color: #000;
 }
 
 .modal__form {
@@ -72,4 +116,10 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+@media (max-width: 800px) {
+  .modal__content {
+    top: 120px;
+  }
 }

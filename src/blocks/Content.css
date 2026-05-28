@@ -18,27 +18,46 @@
 .Content__item {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding: 10px;
   border-bottom: 1px solid #ccc;
   border: solid rgba(255, 255, 255, 0.824) 2px;
   border-radius: 10px;
-  margin: 10px;
+  margin: 0px;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-@media (max-width: 1200px) {
-  .Content ol {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+.Content__body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
 }
 
-@media (max-width: 800px) {
-  .Content ol {
-    grid-template-columns: 1fr;
-    padding: 14px;
-  }
+.Content__TodoDate {
+  font-size: 20px;
+  margin: 0;
+}
+
+.Content__TodoDate--normal {
+  color: rgb(0, 0, 0);
+}
+
+.Content__TodoDate--soon {
+  color: orange;
+}
+
+.Content__TodoDate--urgent {
+  color: red;
+  box-shadow: 0 0 10px  rgba(255, 0, 0, 1);
+  border-radius: 1000px;
+}
+
+.Content__TodoDate--overdue {
+  color: darkred;
+
 }
 
 .Content__text {
@@ -53,6 +72,7 @@
 
 .Content__text--done {
   text-decoration: line-through;
+  color: rgb(0, 0, 0);
 }
 
 .Content__item input[type="checkbox"] {
@@ -60,7 +80,7 @@
   -webkit-appearance: none;
   width: 20px;
   height: 20px;
-  border-radius: 50%;
+  border-radius: 4px;
   border: 2px solid #dc3545;
   background-color: transparent;
   cursor: pointer;
@@ -69,6 +89,10 @@
 
 .Content__item input[type="checkbox"]:checked {
   background-color: #000000;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M3 8l3 3 7-7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 14px 14px;
 }
 
 .Content__delete {
@@ -91,5 +115,20 @@
   .Content__delete {
     padding: 2px 8px;
     font-size: 12px;
+  }
+  .Content__item {
+    padding: 5px;
+  }
+}
+@media (max-width: 1200px) {
+  .Content ol {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .Content ol {
+    grid-template-columns: 1fr;
+    padding: 14px;
   }
 }

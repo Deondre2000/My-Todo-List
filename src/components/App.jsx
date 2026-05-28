@@ -28,14 +28,14 @@ function App() {
 
   /*Add a new todo to the list */
 
-  function addTodo(newTodoText) {
+  function addTodo(newTodoText, dueDate) {
     const trimmedText = newTodoText.trim();
     if (!trimmedText) {
       return;
     }
     setTodos((prevTodos) => [
       ...prevTodos,
-      { text: trimmedText, completed: false },
+      { text: trimmedText, completed: false, dueDate: dueDate || "" },
     ]);
     closeModal();
   }

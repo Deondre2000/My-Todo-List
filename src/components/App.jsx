@@ -5,6 +5,12 @@ import Modal from "./Modal.jsx";
 import { useState, useEffect } from "react";
 import background from "../assets/app-background.webp";
 import Footer from "./Footer.jsx";
+import {
+  fetchTodos,
+  createTodo,
+  updateTodo,
+  deleteTodo,
+} from "../api/todos.js";
 
 function App() {
   const [todos, setTodos] = useState(() => {

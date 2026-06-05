@@ -6,10 +6,14 @@ function Modal({ onClose, onAddTodo }) {
   const [inputValue, setInputValue] = useState("");
   const [dueDate, setDueDate] = useState("");
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    onAddTodo(inputValue, dueDate);
-    onClose();
+    const created = await onAddTodo(inputValue, dueDate);
+    if (created) {
+      onClose();
+      setInputValue("");
+      setDueDate("");
+    }
   }
 
   return (

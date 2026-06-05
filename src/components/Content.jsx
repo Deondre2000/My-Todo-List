@@ -54,11 +54,11 @@ function Content({ todos, onDeleteTodo, onToggleTodo }) {
     <main className="Content">
       <ol>
         {todos.map((todo, index) => (
-          <li className="Content__item" key={index}>
+          <li className="Content__item" key={todo.id || index}>
             <input
               type="checkbox"
               checked={todo.completed}
-              onChange={() => onToggleTodo(index)}
+              onChange={() => onToggleTodo(todo.id)}
             />
             <div className="Content__body">
               <p
@@ -75,7 +75,7 @@ function Content({ todos, onDeleteTodo, onToggleTodo }) {
             <button
               type="button"
               className="Content__delete"
-              onClick={() => onDeleteTodo(index)}
+              onClick={() => onDeleteTodo(todo.id)}
             >
               Delete
             </button>

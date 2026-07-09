@@ -1,0 +1,35 @@
+.Nav {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  z-index: 2;
+}
+
+.Nav__list {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  list-style: none;
+  border-radius: 10px;
+  background-color: rgba(247, 243, 243, 0.068);
+  padding: 0px;
+  margin: 0px;
+}
+
+.Nav__timer {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+
+.Nav__github {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+
+.Nav__linkedin {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}

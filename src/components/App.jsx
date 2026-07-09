@@ -11,6 +11,7 @@ import {
   updateTodo,
   deleteTodo,
 } from "../api/todos.js";
+import Nav from "./nav.jsx";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -110,6 +111,7 @@ function App() {
   return (
     <div className="App">
       <img className="App__background" src={background} alt="Background" />
+      <Nav />
       <Header onAddClick={openModal} />
       {isLoading && <p>Loading todos...</p>}
       {!isLoading && error && <p>{error}</p>}

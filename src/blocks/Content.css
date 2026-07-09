@@ -1,4 +1,6 @@
 .Content {
+  position: relative;
+  z-index: 3;
   display: flex;
   margin: 50px 40px;
   border: 2px solid black;
@@ -62,7 +64,7 @@
 
 .Content__text {
   font-size: 25px;
-  color: rgb(249, 249, 249);
+  color: rgb(225, 255, 0);
   flex: 1;
   min-width: 0;
   white-space: normal;

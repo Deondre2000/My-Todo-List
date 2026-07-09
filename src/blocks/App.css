@@ -18,12 +18,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.6;
+  opacity: 0.5;
   z-index: 0;
   pointer-events: none;
 }
 
-.App > :not(.App__background) {
+.App > p {
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }

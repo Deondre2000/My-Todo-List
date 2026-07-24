@@ -1,4 +1,3 @@
-import { Routes, Route } from "react-router-dom";
 import "../blocks/App.css";
 import Header from "./Header.jsx";
 import Content from "./Content.jsx";
@@ -114,20 +113,16 @@ function App() {
       <img className="App__background" src={background} alt="Background" />
       <Nav />
 
-      <Routes>
-        <Route>
-          <Header onAddClick={openModal} />
-          {isLoading && <p>Loading todos...</p>}
-          {!isLoading && error && <p>{error}</p>}
-          <Content
-            todos={todos}
-            onDeleteTodo={handleDeleteTodo}
-            onToggleTodo={toggleTodo}
-          />
-          {isModalOpen && <Modal onClose={closeModal} onAddTodo={addTodo} />}
-          <Footer />
-        </Route>
-      </Routes>
+      <Header onAddClick={openModal} />
+      {isLoading && <p>Loading todos...</p>}
+      {!isLoading && error && <p>{error}</p>}
+      <Content
+        todos={todos}
+        onDeleteTodo={handleDeleteTodo}
+        onToggleTodo={toggleTodo}
+      />
+      {isModalOpen && <Modal onClose={closeModal} onAddTodo={addTodo} />}
+      <Footer />
     </div>
   );
 }
